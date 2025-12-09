@@ -25,4 +25,9 @@ public class RideDAL {
     public List<Ride> fetchAllRides() {
         return rideDetails.stream().filter(ride -> ride.getRideStatus().equals(AVAILABLE)).toList();
     }
+
+    public List<Ride> getRides(String origin, String destination) {
+        return rideDetails.stream().filter(ride -> ride.getOrigin().equals(origin)
+                && ride.getDestination().equals(destination)).toList();
+    }
 }

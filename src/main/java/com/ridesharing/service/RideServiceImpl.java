@@ -33,7 +33,7 @@ public class RideServiceImpl implements RideService {
 
     @Override
     public List<Ride> fetchRidesBasedOnStrategy(String origin, String destination) {
-        return rideStrategy.sortRidesBasedOnStrategy(fetchAllRides());
+        return rideStrategy.sortRidesBasedOnStrategy(rideDAL.getRides(origin, destination));
     }
 
     @Override
