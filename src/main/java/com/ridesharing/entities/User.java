@@ -70,7 +70,6 @@ public class User {
 
     public void addRide(Ride ride) {
         this.ridesOffered.add(ride);
-        addTotalRidesOffered();
     }
 
     @Override

@@ -53,10 +53,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public void acceptRide(String name, Ride ride) {
         User passengerName = getUser(name);
-        User driverName = getUser(ride.getDriverName());
         rideService.validateRide(ride);
         passengerName.addTotalRidesTaken();
-        driverName.addTotalRidesTaken();
         passengerName.addFuelSaved(ride.getDuration());
     }
 

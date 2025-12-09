@@ -17,7 +17,7 @@ public class RideDAL {
     }
 
     public Ride createRide(String driverName, String origin, String destination, int seats, Vehicle vehicle, int duration, Date startTime) {
-        Ride newRide = new Ride(driverName, origin, destination, vehicle, seats, duration, startTime);
+        Ride newRide = new Ride(origin, destination, vehicle, seats, duration, startTime);
         rideDetails.add(newRide);
         return newRide;
     }

@@ -3,7 +3,6 @@ package com.ridesharing.entities;
 import java.util.Date;
 
 public class Ride {
-    private String driverName;
     private String origin;
     private String destination;
     private int seats;
@@ -12,7 +11,7 @@ public class Ride {
     private Date startTime;
     private RideStatus rideStatus;
 
-    public Ride(String driverName, String origin, String destination, Vehicle vehicle, int seats, int duration, Date startTime) {
+    public Ride(String origin, String destination, Vehicle vehicle, int seats, int duration, Date startTime) {
         this.origin = origin;
         this.destination = destination;
         this.vehicle = vehicle;
@@ -20,7 +19,6 @@ public class Ride {
         this.duration = duration;
         this.startTime = startTime;
         this.rideStatus = RideStatus.AVAILABLE;
-        this.driverName = driverName;
     }
 
     public String getOrigin() {
@@ -67,12 +65,8 @@ public class Ride {
         this.destination = destination;
     }
 
-    public String getDriverName() {
-        return driverName;
-    }
-
     @Override
     public String toString() {
-        return this.origin + " " + this.destination + " " + this.vehicle + " " + this.seats + " " + this.duration + " " + this.startTime + " " + this.rideStatus + " " + this.driverName;
+        return this.origin + " " + this.destination + " " + this.vehicle + " " + this.seats + " " + this.duration + " " + this.startTime + " " + this.rideStatus;
     }
 }
